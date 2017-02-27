@@ -1,4 +1,4 @@
-# A Database for a Timetabling System using Neo4J
+# Using Neo4J to create a database for a timetabling system
 
 
 # Introduction
