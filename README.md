@@ -1,2 +1,8 @@
-# GraphTheoryProject
-Software Development level 7 Yr 3 Graph Theory Project 
+# A Database for a Timetabling System using Neo4J
+
+
+# Introduction
+
+# What is Neo4J?
+
+# A timetabling System
