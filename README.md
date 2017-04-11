@@ -11,4 +11,4 @@ A graph database is a database that uses graph structures for semantic queries w
 ### Benefits of a graph database
 Graph databases are well suited for analysing interconnections, which is why there is been a lot of interest in using graph databases to mine data from social media websites. Graph databases are also useful for working with data in business disciplines that involve complex relationships and dynamic schema.
 
-# A timetabling System
+# Design
