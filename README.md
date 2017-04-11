@@ -1,4 +1,4 @@
-# Creating a timetabling database using Neo4J
+# *Creating a timetabling database using Neo4J*
 
 # Introduction
 This repository will contain documentation and work for my third year graph theory project in the course Computing and Software Development. The lecturer for this module is Ian Mcloughlin. I am required to design and prototype a Neo4j database for use in a timetabling system for a third level institute like GMIT which I am currently attending. The database should store information about student groups, classrooms, lecturers and class hours. 
