@@ -1,0 +1,50 @@
+load csv from 'file:///C:/courses.csv' as line 
+create (:Software_Development {course: line[0], year: line[1]}) 
+
+//MODULES
+load csv from 'file:///c:/modules.csv' as line create (:Modules {name: line{0})
+
+//YEARS
+load csv from 'file:///c:/years.csv' as line create (:Years {year: line.Year})
+
+//ROOMS
+load csv with headers from 'file:///c:/rooms.csv' as line create (:Rooms {room: line.room, capacity: line.capacity})
+
+//LECTURERS
+load csv with headers from 'file:///c:/lecturers.csv' as line create (:Lecturers {lecturer: line.Lecturer})
+
+//DAYS
+load csv with headers from 'file:///c:/days.csv' as line create (:Days {day: line.day})
+
+//STUDENT GROUPS
+load csv with headers from 'file:///c:/studentGroupsUpdated.csv' as line create 
+(:Groups {group: line.Group, size: line.GroupSize, year: line.Year, semester: line.Semester, course: line.course})
+
+//HOURS
+load csv with headers from 'file:///c:/hours.csv' as line create (:Hours {time: line.hours})
+
+//RELATIONSHIPS
+//Years and modules
+MATCH (a:Years),(b:Modules) where a.year = '3' create (a)-[r:modulesInYr3]->(b) return r
+
+//Course and years
+match (a:course),(b:Years) where a.courseID = 'Software Development' create (a)-[r:in]->(b) return r
+
+//SEMESTER LABEL
+MATCH (n:Modules) where n.name = "Software Testing" set n: Semester6 return n
+
+MATCH (n:Modules) where n.name = "Mobile Applications Development 2" or n.name = "Database Management Systems" set n: Semester6 return n
+
+MATCH (n:Modules) where n.name = "Graphics Programming" or n.name = "Data Representation and Querying" or n.name = "Data Centric RAD" or
+ n.name = "Operating Systems 1" or n.name = "Software Quality Management" or n.name = "Advanced Graphics Programming" set n: Semester5 return n
+
+match (m:Modules), (n:Lecturers) where m.name = "Graph Theory" and n.lecturer = "Dr Ian Mcloughlin" create (n)-[r:lectures]->(m) return r
+
+// DELETE A NODE AND ITS RELATIONSHIPS BY ITS ID
+match (n:Modules) where id(n)=275 optional match (n)-[r]-() delete r,n
+
+//DAYS AND HOURS
+match (n:Days),(m:Hours) create (n)-[r:times]->(m) return r
+
+//DATABASE MANAGEMENT ON AT 10AM MONDAY ROOM 994 
+match (a:Modules),(b:Days) where a.name = "Database Management Systems" and b.day = "Monday" create (a)-[r:classOn]->(b) return r
