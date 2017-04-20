@@ -11,6 +11,23 @@ A graph database is a database that uses graph structures for semantic queries w
 ### Benefits of a graph database
 Graph databases are well suited for analysing interconnections, which is why there is been a lot of interest in using graph databases to mine data from social media websites. Graph databases are also useful for working with data in business disciplines that involve complex relationships and dynamic schema.
 
-# Neo4j's graph query language - Cypher
+# Cypher
 
 # Design
+A graph database contains nodes, relationships, relationship types, labels and properties. The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses would be quite difficult. On a page I drew out a tree like structure of the database.
+
+## Nodes
+- Each module would be a node.
+- Each Lecturer would be a node.
+
+### Load CSV
+In order to get data such as rooms, modules, groups and lectures to use for the graph database, I first had to extract the data from GMIT's website by opening up the websites source code and taking out html tags containing the relevent data. I pasted the data into Notepad++ where I could use regular expression techniques to remove the html tags and clean up the data. The best way to import data into neo4j is by using CSV (Comma Seperated Values) files. To do this, I put the cleaned up data into microsoft excel and saved it as a CSV file. 
+
+How to import data from a CSV file into neo4j:
+```sh
+LOAD CSV FROM 'file:///c:/rooms.csv' AS LINE CREATE (:Rooms {room: line.room})
+```
+or with headers
+```sh
+LOAD CSV WITH HEADERS FROM 'file:///c:/rooms.csv' AS LINE CREATE (:Rooms {room: line.room})
+```
