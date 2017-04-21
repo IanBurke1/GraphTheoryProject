@@ -39,14 +39,14 @@ The first thing I had to do was to come up with a design of the database. What w
 ## Nodes/Labels/Properties
 | Nodes | Label | Properties |
 | ------ | ------ | ------ |
-| Course | Courses | courseId e.g. Software Development |
-| Module | Modules/Semester5/Semester6 | name e.g. Graph Theory |
-|  Year | Years | year e.g. 3 |
-|  Room | Rooms | room e.g. G0994 |
-| Lecturer | Lecturers | lecturer e.g. Dr Ian Mcloughlin |
-| Group | Groups | group e.g. A |
-| Day | Days/Week | day e.g. Monday |
-| Hour | Hours | hour e.g. 2pm |
+| Course | Courses | courseId: Software Development |
+| Module | Modules/Semester5/Semester6 | name: Graph Theory |
+|  Year | Years | year: 3 |
+|  Room | Rooms | room: G0994 |
+| Lecturer | Lecturers | lecturer: Dr Ian Mcloughlin |
+| Group | Groups | group: A |
+| Day | Days/Week | day: Monday |
+| Hour | Hours | hour: 2pm |
 
 ## Relationships
 | Node | Relationship | node(s) |
@@ -57,6 +57,8 @@ The first thing I had to do was to come up with a design of the database. What w
 | Year | modulesInYr3 | graph theory |
 | Year | studentGroups | group A/B/C |
 | Day | times | 8am/9am/10am/11am/12pm/1pm/.. |
+
+
 
 
 ### Load CSV
