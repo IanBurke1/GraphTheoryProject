@@ -17,30 +17,61 @@ Cypher is a declarative graph query language that allows for expressive and effi
 # Design
 A graph database contains nodes, relationships, relationship types, labels and properties.
 ## *Node*
+<<<<<<< HEAD
 Nodes are often used to represent entities e.g. a Person is a node. 
 ## *Label*
 A label is used to group nodes into sets. All nodes labeled with the same label belongs to the same set. Labels on nodes are optional and any node can have a number of labels attached to it. Many database queries can work with these sets instead of the whole graph, making queries easier to write and more efficient to execute. 
 ## *Properties*
 Properties are named values where the name (or key) is a string. The values can be numeric, string or boolean. Both nodes and relationships may have properties.
+=======
+A node is a seperate entity e.g. a Person is a node
+Here are each module node with name properties:
+![](https://cloud.githubusercontent.com/assets/22341150/25282596/e04b88ac-26a8-11e7-95cd-7157b80a2967.PNG)
+
+## *Label*
+A label is a grouping facility for node where all nodes having a label are part of the same group. Labels on nodes are optional and any node can have a number of labels attached to it.
+Here are two labels for modules in semester 5 and semester 6:
+![](https://cloud.githubusercontent.com/assets/22341150/25281769/417cb4fa-26a6-11e7-9df1-906a5f759d75.PNG)
+
+>>>>>>> 8122fb3dfd97336d39eaddeac496a3e8ac784d31
 ## *Relationship*
 A node can have a relationship with another node. Relationships between nodes are the key feature of graph databases, as they allow for finding related data. A relationship connects two nodes. Relationships organise nodes into arbitrary structures allowing a graph to resemble a list, a tree or a map. 
+Here is a relationship 'courseYear' between course and the years:
+![](https://cloud.githubusercontent.com/assets/22341150/25282510/9711f0ea-26a8-11e7-84e0-12de81b6a06d.PNG)
 
-[![N|Solid](https://www.tutorialspoint.com/neo4j/images/create_relationship_example1.png)]
 
+<<<<<<< HEAD
 
 The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. 
+=======
+The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. The biggest obstacle was the time slots and its relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all takes a lot of time and queries.
+![](https://cloud.githubusercontent.com/assets/22341150/25284961/87b847f4-26b0-11e7-9f40-e699d7d9181e.jpg)
+
+
+>>>>>>> 8122fb3dfd97336d39eaddeac496a3e8ac784d31
 
 ## Nodes/Labels/Properties
 | Nodes | Label | Properties |
 | ------ | ------ | ------ |
-| Course | Courses | courseId e.g. Software Development |
-| Module | Modules/Semester5/Semester6 | name e.g. Graph Theory |
-|  Year | Years | year e.g. 3 |
-|  Room | Rooms | room e.g. G0994 |
-| Lecturer | Lecturers | lecturer e.g. Dr Ian Mcloughlin |
-| Group | Groups | group e.g. A |
-| Day | Days | day e.g. Monday |
-| Hour | Hours | hour e.g. 2pm |
+| Course | Courses | courseId: Software Development |
+| Module | Modules/Semester5/Semester6 | name: Graph Theory |
+|  Year | Years | year: 3 |
+|  Room | Rooms | room: G0994 |
+| Lecturer | Lecturers | lecturer: Dr Ian Mcloughlin |
+| Group | Groups | group: A |
+| Day | Days/Week | day: Monday |
+| Hour | Hours | hour: 2pm |
+
+## Relationships
+| Node | Relationship | node(s) |
+| ------ | ------ | ------ |
+| module | classOn | Monday/Tuesaday/Wednesday/Thursday/Friday |
+| Course | courseYear | 1/2/3/4 |
+|  Lecturer | lectures | graph theory |
+| Year | modulesInYr3 | graph theory |
+| Year | studentGroups | group A/B/C |
+| Day | times | 8am/9am/10am/11am/12pm/1pm/.. |
+
 
 The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all in one query is hard. 
 
@@ -57,4 +88,7 @@ or with headers
 ```sh
 LOAD CSV WITH HEADERS FROM 'file:///c:/rooms.csv' AS LINE CREATE (:Rooms {room: line.room})
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8122fb3dfd97336d39eaddeac496a3e8ac784d31
