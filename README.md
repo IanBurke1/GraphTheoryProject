@@ -18,7 +18,7 @@ Cypher is a declarative graph query language that allows for expressive and effi
 A graph database contains nodes, relationships, relationship types, labels and properties.
 ## *Node*
 A node is a seperate entity e.g. a Person is a node
-[![n|solid](https://cloud.githubusercontent.com/assets/22341150/25282596/e04b88ac-26a8-11e7-95cd-7157b80a2967.PNG)]
+[n|solid](https://cloud.githubusercontent.com/assets/22341150/25282596/e04b88ac-26a8-11e7-95cd-7157b80a2967.PNG)
 ## *Label*
 A label is a grouping facility for node where all nodes having a label are part of the same group. Labels on nodes are optional and any node can have a number of labels attached to it.
 [![N|Solid](https://cloud.githubusercontent.com/assets/22341150/25281769/417cb4fa-26a6-11e7-9df1-906a5f759d75.PNG)]
