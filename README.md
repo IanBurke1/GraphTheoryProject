@@ -33,6 +33,7 @@ Here is a relationship 'courseYear' between course and the years:
 
 
 The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. The biggest obstacle was the time slots and its relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all takes a lot of time and queries.
+![](https://cloud.githubusercontent.com/assets/22341150/25284961/87b847f4-26b0-11e7-9f40-e699d7d9181e.jpg)
 
 
 
