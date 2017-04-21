@@ -45,9 +45,18 @@ The first thing I had to do was to come up with a design of the database. What w
 |  Room | Rooms | room e.g. G0994 |
 | Lecturer | Lecturers | lecturer e.g. Dr Ian Mcloughlin |
 | Group | Groups | group e.g. A |
-| Day | Days | day e.g. Monday |
+| Day | Days/Week | day e.g. Monday |
 | Hour | Hours | hour e.g. 2pm |
 
+## Relationships
+| Node | Relationship | node(s) |
+| ------ | ------ | ------ |
+| module | classOn | Monday/Tuesaday/Wednesday/Thursday/Friday |
+| Course | courseYear | 1/2/3/4 |
+|  Lecturer | lectures | graph theory |
+| Year | modulesInYr3 | graph theory |
+| Year | studentGroups | group A/B/C |
+| Day | times | 8am/9am/10am/11am/12pm/1pm/.. |
 
 
 ### Load CSV
