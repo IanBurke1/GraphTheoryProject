@@ -17,16 +17,18 @@ Graph databases are well suited for analysing interconnections, which is why the
 A graph database contains nodes, relationships, relationship types, labels and properties. The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses would be quite difficult. On a page I drew out a tree like structure of the database.
 
 ## Nodes
-| Nodes | Properties |
-| ------ | ------ |
-| Course | courseId e.g. Software Development |
-| Modules | name e.g. Graph Theory |
-|  Years | year e.g. 3 |
-|  Rooms | room e.g. G0994 |
-| Lecturers | lecturer e.g. Dr Ian Mcloughlin |
-| Groups | group e.g. A |
-| Days | day e.g. Monday |
-| Hours | hour e.g. 2pm |
+| Nodes | Label | Properties |
+| ------ | ------ | ------ |
+| Course | Courses | courseId e.g. Software Development |
+| Module | Modules/Semester5/Semester6 | name e.g. Graph Theory |
+|  Year | Years | year e.g. 3 |
+|  Room | Rooms | room e.g. G0994 |
+| Lecturer | Lecturers | lecturer e.g. Dr Ian Mcloughlin |
+| Group | Groups | group e.g. A |
+| Day | Days | day e.g. Monday |
+| Hour | Hours | hour e.g. 2pm |
+
+
 
 ### Load CSV
 In order to get data such as rooms, modules, groups and lectures to use for the graph database, I first had to extract the data from GMIT's website by opening up the websites source code and taking out html tags containing the relevent data. I pasted the data into Notepad++ where I could use regular expression techniques to remove the html tags and clean up the data. The best way to import data into neo4j is by using CSV (Comma Seperated Values) files. To do this, I put the cleaned up data into microsoft excel and saved it as a CSV file. 
