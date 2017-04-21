@@ -12,11 +12,25 @@ A graph database is a database that uses graph structures for semantic queries w
 Graph databases are well suited for analysing interconnections, which is why there is been a lot of interest in using graph databases to mine data from social media websites. Graph databases are also useful for working with data in business disciplines that involve complex relationships and dynamic schema.
 
 # Cypher
+Cypher is a declarative graph query language that allows for expressive and efficient querying and updating of the graph store. It is similar in a way to MySQL with its structure i.e. queries are built up using various clauses. Very complicated database queries can easily expressed through Cypher. Cypher was originally created by Neo Technology for its graph database Neo4j. Now it is adopted by other graph database vendors such as SAP and HANA.
 
 # Design
-A graph database contains nodes, relationships, relationship types, labels and properties. The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses would be quite difficult. On a page I drew out a tree like structure of the database.
+A graph database contains nodes, relationships, relationship types, labels and properties.
+## *Node*
+A node is a seperate entity e.g. a Person is a node
+## *Label*
+A label is a grouping facility for node where all nodes having a label are part of the same group. Labels on nodes are optional and any node can have a number of labels attached to it.
+## *Relationship*
+A node can have a relationship with another node. Relationships between nodes are the key feature of graph databases, as they allow for finding related data. A relationship connects two nodes. Relationships organise nodes into arbitrary structures allowing a graph to resemble a list, a tree or a map. 
 
-## Nodes
+[![N|Solid](https://www.tutorialspoint.com/neo4j/images/create_relationship_example1.png)]
+
+
+The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. The biggest obstacle was the time slots and its relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all in one query was hard. 
+
+
+
+## Nodes/Labels/Properties
 | Nodes | Label | Properties |
 | ------ | ------ | ------ |
 | Course | Courses | courseId e.g. Software Development |
