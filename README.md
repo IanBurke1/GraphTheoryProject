@@ -17,18 +17,18 @@ Cypher is a declarative graph query language that allows for expressive and effi
 # Design
 A graph database contains nodes, relationships, relationship types, labels and properties.
 ## *Node*
-A node is a seperate entity e.g. a Person is a node
+Nodes are often used to represent entities e.g. a Person is a node. 
 ## *Label*
-A label is a grouping facility for node where all nodes having a label are part of the same group. Labels on nodes are optional and any node can have a number of labels attached to it.
+A label is used to group nodes into sets. All nodes labeled with the same label belongs to the same set. Labels on nodes are optional and any node can have a number of labels attached to it. Many database queries can work with these sets instead of the whole graph, making queries easier to write and more efficient to execute. 
+## *Properties*
+Properties are named values where the name (or key) is a string. The values can be numeric, string or boolean. Both nodes and relationships may have properties.
 ## *Relationship*
 A node can have a relationship with another node. Relationships between nodes are the key feature of graph databases, as they allow for finding related data. A relationship connects two nodes. Relationships organise nodes into arbitrary structures allowing a graph to resemble a list, a tree or a map. 
 
 [![N|Solid](https://www.tutorialspoint.com/neo4j/images/create_relationship_example1.png)]
 
 
-The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. The biggest obstacle was the time slots and its relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all in one query was hard. 
-
-
+The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. 
 
 ## Nodes/Labels/Properties
 | Nodes | Label | Properties |
@@ -42,10 +42,12 @@ The first thing I had to do was to come up with a design of the database. What w
 | Day | Days | day e.g. Monday |
 | Hour | Hours | hour e.g. 2pm |
 
+The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all in one query is hard. 
+
 
 
 ### Load CSV
-In order to get data such as rooms, modules, groups and lectures to use for the graph database, I first had to extract the data from GMIT's website by opening up the websites source code and taking out html tags containing the relevent data. I pasted the data into Notepad++ where I could use regular expression techniques to remove the html tags and clean up the data. The best way to import data into neo4j is by using CSV (Comma Seperated Values) files. To do this, I put the cleaned up data into microsoft excel and saved it as a CSV file. 
+In order to get data such as rooms, modules, groups and lectures to use for the graph database, I first had to extract the data from GMIT's website by opening up the websites source code and taking out html tags containing the relevent data. I pasted the data into Notepad++ where I could use regular expression techniques to remove the html tags and clean up the data. The best way to import data into neo4j is by using CSV (Comma Seperated Values) files. To do this, I put the data into microsoft excel and saved it as a CSV file. 
 
 How to import data from a CSV file into neo4j:
 ```sh
@@ -55,3 +57,4 @@ or with headers
 ```sh
 LOAD CSV WITH HEADERS FROM 'file:///c:/rooms.csv' AS LINE CREATE (:Rooms {room: line.room})
 ```
+
