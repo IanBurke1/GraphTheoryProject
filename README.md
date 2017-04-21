@@ -33,22 +33,14 @@ A label is a grouping facility for node where all nodes having a label are part 
 Here are two labels for modules in semester 5 and semester 6:
 ![](https://cloud.githubusercontent.com/assets/22341150/25281769/417cb4fa-26a6-11e7-9df1-906a5f759d75.PNG)
 
->>>>>>> 8122fb3dfd97336d39eaddeac496a3e8ac784d31
+
 ## *Relationship*
 A node can have a relationship with another node. Relationships between nodes are the key feature of graph databases, as they allow for finding related data. A relationship connects two nodes. Relationships organise nodes into arbitrary structures allowing a graph to resemble a list, a tree or a map. 
 Here is a relationship 'courseYear' between course and the years:
 ![](https://cloud.githubusercontent.com/assets/22341150/25282510/9711f0ea-26a8-11e7-84e0-12de81b6a06d.PNG)
 
-
-<<<<<<< HEAD
-
-The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. 
-=======
 The first thing I had to do was to come up with a design of the database. What would be nodes, what would be labels, which nodes had relationships and what would be properties. The database will be designed using the timetable of my current year as creating a timetabling database for all courses in the college would be quite difficult. I drew out my design of the graph database on a page. It took a few pages to finally get it right. The biggest obstacle was the time slots and its relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all takes a lot of time and queries.
 ![](https://cloud.githubusercontent.com/assets/22341150/25284961/87b847f4-26b0-11e7-9f40-e699d7d9181e.jpg)
-
-
->>>>>>> 8122fb3dfd97336d39eaddeac496a3e8ac784d31
 
 ## Nodes/Labels/Properties
 | Nodes | Label | Properties |
