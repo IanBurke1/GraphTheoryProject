@@ -72,10 +72,15 @@ The first thing I had to do was to come up with a design of the database. What w
 | Year | studentGroups | group A/B/C |
 | Day | times | 8am/9am/10am/11am/12pm/1pm/.. |
 
-
-The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. It would be easier to query. Although trying to create a relationship between them all in one query is hard. 
-
-
+# Cypher Queries
+Find out what modules Ian Mcloughlin lectures:
+```sh
+MATCH (n:Lecturers)-[r:lectures]->(m:Modules) where n.lecturer contains "Ian Mcl" return n,m
+```
+Find out what days Martin Hynes has class on:
+```sh
+MATCH (n:Lecturers)-[r:hasClassOn]->(d:Days) where n.lecturer = "Martin Hynes" return n,d
+```
 
 ### Load CSV
 In order to get data such as rooms, modules, groups and lectures to use for the graph database, I first had to extract the data from GMIT's website by opening up the websites source code and taking out html tags containing the relevent data. I pasted the data into Notepad++ where I could use regular expression techniques to remove the html tags and clean up the data. The best way to import data into neo4j is by using CSV (Comma Seperated Values) files. To do this, I put the data into microsoft excel and saved it as a CSV file. 
@@ -88,7 +93,7 @@ or with headers
 ```sh
 LOAD CSV WITH HEADERS FROM 'file:///c:/rooms.csv' AS LINE CREATE (:Rooms {room: line.room})
 ```
-<<<<<<< HEAD
 
-=======
->>>>>>> 8122fb3dfd97336d39eaddeac496a3e8ac784d31
+# Conclusion
+The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. 
+
