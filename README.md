@@ -17,21 +17,16 @@ Cypher is a declarative graph query language that allows for expressive and effi
 # Design
 A graph database contains nodes, relationships, relationship types, labels and properties.
 ## *Node*
-<<<<<<< HEAD
 Nodes are often used to represent entities e.g. a Person is a node. 
 ## *Label*
-A label is used to group nodes into sets. All nodes labeled with the same label belongs to the same set. Labels on nodes are optional and any node can have a number of labels attached to it. Many database queries can work with these sets instead of the whole graph, making queries easier to write and more efficient to execute. 
+A label is used to group nodes into sets. All nodes labeled with the same label belongs to the same set. Labels on nodes are optional and any node can have a number of labels attached to it. Many database queries can work with these sets instead of the whole graph, making queries easier to write and more efficient to execute.
+![](https://cloud.githubusercontent.com/assets/22341150/25281769/417cb4fa-26a6-11e7-9df1-906a5f759d75.PNG) 
 ## *Properties*
 Properties are named values where the name (or key) is a string. The values can be numeric, string or boolean. Both nodes and relationships may have properties.
-=======
-A node is a seperate entity e.g. a Person is a node
 Here are each module node with name properties:
 ![](https://cloud.githubusercontent.com/assets/22341150/25282596/e04b88ac-26a8-11e7-95cd-7157b80a2967.PNG)
 
-## *Label*
-A label is a grouping facility for node where all nodes having a label are part of the same group. Labels on nodes are optional and any node can have a number of labels attached to it.
-Here are two labels for modules in semester 5 and semester 6:
-![](https://cloud.githubusercontent.com/assets/22341150/25281769/417cb4fa-26a6-11e7-9df1-906a5f759d75.PNG)
+
 
 
 ## *Relationship*
