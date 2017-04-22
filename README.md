@@ -1,7 +1,8 @@
 # *Creating a timetabling database using Neo4J*
+![](https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png)
 
 # Introduction
-This repository will contain documentation and work for my third year graph theory project in the course Computing and Software Development. The lecturer for this module is Ian Mcloughlin. I am required to design and prototype a Neo4j database for use in a timetabling system for a third level institute like GMIT which I am currently attending. The database should store information about student groups, classrooms, lecturers and class hours. 
+This repository will contain documentation and work for my third year graph theory project in the course Computing and Software Development. The lecturer for this module is [Ian Mcloughlin](https://github.com/ianmcloughlin). I am required to design and prototype a Neo4j database for use in a timetabling system for a third level institute like GMIT which I am currently attending. The database should store information about student groups, classrooms, lecturers and class hours. 
 
 # What is Neo4J?
 [Neo4j](https://neo4j.com/download/) is the world's leading graph database. It is an open source NoSQL graph database implemented in java, hence the name Neo4java. It is described by its developers as an ACID (Atomicity, Consistency, Isolation, Durability) compliant transactional database with native graph storage and processing.
@@ -13,6 +14,7 @@ Graph databases are well suited for analysing interconnections, which is why the
 
 # Cypher
 [Cypher](https://neo4j.com/developer/cypher-query-language/) is a declarative graph query language that allows for expressive and efficient querying and updating of the graph store. It is similar in a way to MySQL with its structure i.e. queries are built up using various clauses. Very complicated database queries can easily expressed through Cypher. Cypher was originally created by Neo Technology for its graph database Neo4j. Now it is adopted by other graph database vendors such as SAP and HANA.
+![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/cypher_pattern_simple.png)
 
 # Design
 A graph database contains nodes, relationships, relationship types, labels and properties.
@@ -82,7 +84,7 @@ LOAD CSV WITH HEADERS FROM 'file:///c:/rooms.csv' AS LINE CREATE (:Rooms {room: 
 ```
 
 # Conclusion
-Neo4j is very useful and powerful graph database that can store and present data efficiently. I was able to load all the csv files into neo4j without any problems. I was able to create labels and relationships between the nodes. The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. Trying to create relationships in one query was head wrecking when you are trying to link specific groups, lecturers, modules, days and times together.
+Neo4j is very useful and powerful graph database that can store and present data efficiently. I was able to load all the csv files into neo4j without any problems. I was able to create labels and relationships between the nodes. The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. Trying to create relationships in one query was difficult when you are trying to link specific groups, lecturers, modules, days and times together.
 
 # References
 - Neo4j Cypher clauses: http://neo4j.com/docs/developer-manual/current/cypher/clauses/
