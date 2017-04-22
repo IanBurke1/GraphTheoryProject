@@ -48,3 +48,5 @@ match (n:Days),(m:Hours) create (n)-[r:times]->(m) return r
 
 //DATABASE MANAGEMENT ON AT 10AM MONDAY ROOM 994 
 match (a:Modules),(b:Days) where a.name = "Database Management Systems" and b.day = "Monday" create (a)-[r:classOn]->(b) return r
+// Ian has class on at 9am and 10am 
+match (n:Lecturers),(m:Hours) where n.lecturer contains "Ian" and m.time = "9am" and  m.time = "10am" create (n)-[r:hasClassAt]->(m) return n,r,m
