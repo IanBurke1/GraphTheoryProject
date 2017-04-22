@@ -84,7 +84,7 @@ LOAD CSV WITH HEADERS FROM 'file:///c:/rooms.csv' AS LINE CREATE (:Rooms {room: 
 ```
 
 # Conclusion
-Neo4j is very useful and powerful graph database that can store and present data efficiently. I was able to load all the csv files into neo4j without any problems. I was able to create labels and relationships between the nodes. The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. Trying to create relationships in one query was difficult when you are trying to link specific groups, lecturers, modules, days and times together.
+Neo4j is very useful and powerful graph database that can store and present data efficiently. It basically is like a white board where you are in control of the design with a marker. There are many ways to go about with creating the database. I was able to load all the csv files into neo4j without any problems. I was able to create labels and relationships between the nodes. The biggest obstacle was the time slots and their relationship with modules, rooms, groups and lecturers. I decided to make each day of the week a node and each hour a node instead of having a day node with each hour as properties. Trying to create relationships in one query was difficult when you are trying to link specific groups, lecturers, modules, days and times together. Working with timetables is tricky enough but I would definitely use Neo4j again and for future reference. 
 
 # References
 - Neo4j Cypher clauses: http://neo4j.com/docs/developer-manual/current/cypher/clauses/
