@@ -1,3 +1,4 @@
+# 3rd Year Graph Theory Project
 # *Creating a timetabling database using Neo4J*
 ![](https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png)
 
